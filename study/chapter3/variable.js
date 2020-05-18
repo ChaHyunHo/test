@@ -185,7 +185,7 @@ console.log(str_temp_1);
 
 
 const str_hello_2 = "hello2";
-str_hello_2.member = 3; // 일시적인 String 객체에 프로퍼티를 할당하게 되면 undefined
+str_hello_2.member = 3; // 일시적인 String 객체이므로 프로퍼티를 할당하게 되면 undefined
 console.log(str_hello_2.member);
 
 
