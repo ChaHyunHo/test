@@ -188,6 +188,82 @@ const str_hello_2 = "hello2";
 str_hello_2.member = 3; // 일시적인 String 객체이므로 프로퍼티를 할당하게 되면 undefined
 console.log(str_hello_2.member);
 
+// 배열
+// 자바스크립트 배열이 C 언어의 효율적인 배열과 더 강력한 동적 배열, 링크드 리스트를 혼합한 것임을 알 수 있음
+/**
+ * 자바스크립트 배열의 특징
+ * 1. 배열 크기는 고정되지 않는다. 언제든 요소를 추가하거나 제거할 수 있다.
+ * 2. 요소의 데이터 타입을 가리지 않는다. 즉, 문자열만 쓸 수 있는 배열이라던가 숫자만 쓸 수 있는 배열 같은 개념이 아예 없다.
+ * 3. 배열 요서는 0으로 시작한다.
+ */
 
+const a1 = [1, 2, 3 , 4]              // 숫자로만 구성된있는 배열
+const a2 = [1, 'two', 3, null];       // 여러가지 타입으로 구성된 배열
+const a3 = [                          // 여러 줄로 정의한 배열
+    "What the hammer? What the chain?",
+    "In What furnace was tht brain?",
+    "What the anvil? What dread grasp",
+];
+const a4 = [                          // 객체가 들어있는 배열
+  {name : "Ruby", hardness: 9},
+  {name : "Diamond", hardness: 10},
+  {name : "Topaz", hardness: 8},
+]
+const a5 = [                          // 배열이 들어있는 배열
+  [1,3,5],
+  [2,4,6]
+]
+for(let i = 0; i < a5.length; i++) {
+  console.log(a5[i][0]);
+}
+
+ // 배열을 덮어쓸 때는 새 값을 할당하면 됨
+ const arr = [1, 2, 'c', 4, 5];
+ arr[2] = 3; 
+ console.log(arr);
+
+/**
+ * a4 변수를보면 객체 배열에서 마지막 콤마가 존재하게 되는데 이런 마지막 
+ * 쉼표를 trailing comma, dangling comma, terminal comma 라고 부름
+ * 이책의 저자는 배열과 객체에서 잘라내고 붙여넣는 일이 많고 , 객체 마지막에 
+ * 프로퍼티를 추가하는 일이 많으므로 마지막 쉼표를 사용한다고함
+ * 하지만 스타일 가이드나 마지막 쉼표를 쓰지 않겠다고 정했다면 그것에 맞춰하는것이
+ * 맞음
+ * 
+ *  JSON에서는 마지막 쉼표를 허용하지 않음. 
+ */
+
+
+ // 날짜 (Date 객체)
+
+ const date1 = new Date();
+ console.log(date1);
+
+ let year  = date1.getFullYear();
+ let month = date1.getMonth();
+ let day   = date1.getDay(); 
+  
+ if(day.length <= 1) {
+    day = "0" + day;  
+ }
+
+console.log('현재' + year + month + day)
+
+const halloween = new Date(2016, 9, 31);
+console.log(halloween);
+
+// 데이터 타입 변환 
+
+// 숫자로 바꾸기
+const numStr = "33.3";
+const num = Number(numStr); // 숫자 값을 만듬 , Number 객체의 인스턴스가 아님
+console.log(typeof num);
+console.log(num);
+
+const parse_a = parseInt("16 volts", 10); // volts는 무시됨,  10진수 16임
+console.log(parse_a);
+const parse_b = parseInt("3a", 16) // 16진수 3a를 10진수로 바꿈
+console.log(parse_b);
+const d = new Date();
 
 
